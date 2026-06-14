@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-cinema-black: #080808;
+  --color-cinema-dark: #121212;
+  --color-cinema-gray: #1c1c1c;
+  --color-cinema-light-gray: #282828;
+  --color-cinema-gold: #E0DED7;
+  --color-cinema-amber: #F2F1ED;
+  --color-cinema-text-muted: #9E9C97;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E0DED7;
+}
+
+/* Base Body Styles */
+body {
+  background-color: #080808;
+  color: #E0DED7;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.012"/%3E%3C/svg%3E') repeat;
+  z-index: 999;
+  pointer-events: none;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-1%, -1%); }
+  20% { transform:translate(-2%, 1%); }
+  30% { transform:translate(1%, -2%); }
+  40% { transform:translate(-1%, 3%); }
+  50% { transform:translate(-2%, 2%); }
+  60% { transform:translate(3%, -1%); }
+  70% { transform:translate(2%, 1%); }
+  80% { transform:translate(-3%, -2%); }
+  90% { transform:translate(1%, 2%); }
+}
+
+/* Cinematic Scanlines */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(8, 8, 8, 0) 50%, 
+    rgba(0, 0, 0, 0.2) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(0, 0, 0, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  background-size: 100% 4px, 6px 100%;
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Spotlight Vignette radial shadow */
+.cinematic-vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 40%, rgba(8,8,8,0.95) 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Blur backdrop animation helper */
+.backdrop-blur-cinematic {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}

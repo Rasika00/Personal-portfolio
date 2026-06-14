@@ -1,0 +1,6 @@
+{
+  "name": "Cinematic Portfolio",
+  "description": "A modern, highly-polished personal portfolio website styled as a cinematic journey with smooth Framer Motion transitions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
