@@ -6,21 +6,37 @@ import { Mail, MapPin, Layers, Award, Aperture, Cpu, X } from "lucide-react";
 export default function Vision() {
   const [showActivities, setShowActivities] = useState(false);
 
-  const activities = [
+  type Activity = {
+    name: string;
+    role?: string;
+    image?: string;
+    images?: string[];
+    events?: string[];
+    colSpan?: number;
+  };
+
+  const activities: Activity[] = [
     {
       name: "Cricket",
-      role: "School Team",
-      image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=80",
+      role: "Soft ball",
+      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781536154/c843fd58-a33e-46b3-98cf-3609d8ed6fc1_duaiqe.jpg",
     },
     {
       name: "Athletics",
       role: "Track & Field",
-      image: "https://images.unsplash.com/photo-1552674605-15cff7741cc7?auto=format&fit=crop&w=800&q=80",
+      events: ["100m", "200m", "Long Jump", "110 hurdles"],
+      images: [
+        "https://res.cloudinary.com/dpdsdpmgg/image/upload/v1781534501/Gemini_Generated_Image_np3nx7np3nx7np3n_omquyy.png",
+        "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781534520/Gemini_Generated_Image_3ahxiu3ahxiu3ahx_1_evbhd7.png",
+        "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781535693/720a77b4-96ba-4d4c-af90-30aa12640758_wzk5oz.jpg",
+        "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781535548/1950a125d0b93b41f8436e11f8bdd2ff_diajsw.jpg"
+      ],
+      colSpan: 2,
     },
     {
       name: "Volleyball",
       role: "Team Captain",
-      image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80",
+      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781538273/WhatsApp_Image_2026-06-15_at_8.45.01_PM_ldil4j.jpg",
     }
   ];
   const specs = [
@@ -115,7 +131,7 @@ export default function Vision() {
                 Cam: 01 // REC
               </div>
             </div>
-            
+
             <div className="mt-4 text-center">
               <div className="text-xs font-display text-cinema-gold uppercase tracking-[0.25em]">{PERSONAL_INFO.name}</div>
               <div className="text-[10px] font-mono text-cinema-text-muted mt-1 uppercase tracking-widest">Digital Director & Tech Architect</div>
@@ -135,7 +151,7 @@ export default function Vision() {
           <h4 className="text-xs font-display uppercase tracking-[0.3em] font-medium text-cinema-gold">
             Creative Specifications & Frameworks
           </h4>
-          <button 
+          <button
             onClick={() => setShowActivities(true)}
             className="text-[9px] sm:text-[10px] font-display uppercase tracking-widest text-black bg-cinema-gold px-4 py-2 hover:bg-white hover:text-black transition-all duration-300 shadow-md"
           >
@@ -182,7 +198,7 @@ export default function Vision() {
             className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-cinema-black/90 backdrop-blur-md"
           >
             <div className="absolute inset-0" onClick={() => setShowActivities(false)} />
-            
+
             <motion.div
               initial={{ y: 50, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -190,31 +206,58 @@ export default function Vision() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-full max-w-4xl bg-cinema-dark border border-cinema-border/40 p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[85vh]"
             >
-              <button 
+              <button
                 onClick={() => setShowActivities(false)}
                 className="absolute top-4 right-4 text-cinema-text-muted hover:text-white transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
-              
+
               <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 italic tracking-wide">
                 Extra Curricular Activities
               </h3>
               <div className="w-12 h-[1px] bg-cinema-gold/60 mb-8" />
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {activities.map((activity, idx) => (
-                  <div key={idx} className="group relative overflow-hidden border border-cinema-border/30 bg-black/40">
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img 
-                        src={activity.image} 
-                        alt={activity.name} 
-                        className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
-                      />
-                    </div>
+                  <div key={idx} className={`group relative overflow-hidden border border-cinema-border/30 bg-black/40 ${activity.colSpan ? `sm:col-span-${activity.colSpan}` : ''}`}>
+                    {activity.images ? (
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 aspect-[4/3] sm:aspect-[8/3]">
+                        {activity.images.map((img, i) => (
+                          <div key={i} className="overflow-hidden relative h-full w-full">
+                            <img
+                              src={img}
+                              alt={`${activity.name} ${i + 1}`}
+                              className="w-full h-full absolute inset-0 object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img
+                          src={activity.image}
+                          alt={activity.name}
+                          className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
+                        />
+                      </div>
+                    )}
                     <div className="p-4 border-t border-cinema-border/30">
-                      <h4 className="text-cinema-gold font-display text-sm uppercase tracking-widest">{activity.name}</h4>
-                      {activity.role && <p className="text-xs text-cinema-text-muted font-mono mt-1 uppercase tracking-wider">{activity.role}</p>}
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                        <div>
+                          <h4 className="text-cinema-gold font-display text-sm uppercase tracking-widest">{activity.name}</h4>
+                          {activity.role && <p className="text-xs text-cinema-text-muted font-mono mt-1 uppercase tracking-wider">{activity.role}</p>}
+                        </div>
+                        {activity.events && (
+                          <div className="flex flex-wrap gap-1.5 sm:justify-end sm:max-w-[60%]">
+                            {activity.events.map((event, i) => (
+                              <span key={i} className="text-[9px] font-mono border border-cinema-border/40 px-1.5 py-0.5 text-cinema-text-muted uppercase tracking-wider bg-cinema-dark/50">
+                                {event}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
