@@ -6,13 +6,13 @@
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-display: "Space Grotesk", sans-serif;
   
-  --color-cinema-black: #080808;
-  --color-cinema-dark: #121212;
-  --color-cinema-gray: #1c1c1c;
-  --color-cinema-light-gray: #282828;
-  --color-cinema-gold: #E0DED7;
-  --color-cinema-amber: #F2F1ED;
-  --color-cinema-text-muted: #9E9C97;
+  --color-cinema-black: #050b14;
+  --color-cinema-dark: #0a1128;
+  --color-cinema-gray: #16203c;
+  --color-cinema-light-gray: #1e293b;
+  --color-cinema-gold: #00f2fe;
+  --color-cinema-amber: #fe0979;
+  --color-cinema-text-muted: #e2e8f0;
 }
 
 /* Custom Scrollbars */
@@ -21,24 +21,25 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: var(--color-cinema-black);
 }
 ::-webkit-scrollbar-thumb {
-  background: #222222;
+  background: var(--color-cinema-gray);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E0DED7;
+  background: var(--color-cinema-gold);
 }
 
 /* Base Body Styles */
 body {
-  background-color: #080808;
-  color: #E0DED7;
+  background-color: var(--color-cinema-black);
+  color: #f8fafc;
   font-family: var(--font-sans);
   overflow-x: hidden;
   position: relative;
 }
+
 
 /* Film Grain Overlay */
 .film-grain {
@@ -87,7 +88,7 @@ body {
   background-size: 100% 4px, 6px 100%;
   z-index: 998;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.15;
 }
 
 /* Spotlight Vignette radial shadow */

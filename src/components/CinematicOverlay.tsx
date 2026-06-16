@@ -65,7 +65,7 @@ export default function CinematicOverlay({
                   transition={{ delay: 0.4 }}
                   className="text-[10px] font-display uppercase tracking-[0.4em] text-cinema-gold"
                 >
-                  CALIBRATING DIGITAL EXPERIENCE
+                  INITIALIZING NEURAL INTERFACE
                 </motion.span>
                 <motion.h2
                   initial={{ opacity: 0, y: 15 }}
@@ -73,7 +73,7 @@ export default function CinematicOverlay({
                   transition={{ duration: 1.2, delay: 0.5 }}
                   className="text-3xl md:text-4xl font-serif italic text-white"
                 >
-                  {PERSONAL_INFO.name} // Folio
+                  {PERSONAL_INFO.name} // SYSTEM.OS
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -81,7 +81,7 @@ export default function CinematicOverlay({
                   transition={{ delay: 0.7 }}
                   className="text-xs font-sans text-cinema-text-muted font-light tracking-wide leading-relaxed"
                 >
-                  For complete sensory immersion, this exhibition utilizes structural layout physics, and synchronized ambient acoustics.
+                  System initialized. Establishing encrypted connection. Please ensure your physical hardware is calibrated for seamless data transmission and spatial rendering.
                 </motion.p>
               </div>
 
@@ -99,7 +99,7 @@ export default function CinematicOverlay({
                       className="px-8 py-4 bg-cinema-gold hover:bg-white text-black font-display text-xs font-semibold uppercase tracking-[0.25em] cursor-pointer transition-all duration-500 rounded-none w-full max-w-xs ring-2 ring-cinema-gold/20 flex items-center justify-center gap-2"
                     >
                       <Volume2 className="w-4 h-4 fill-current" />
-                      <span>Enter Theater</span>
+                      <span>Initialize System</span>
                     </motion.button>
                   )}
                 </AnimatePresence>
@@ -113,7 +113,7 @@ export default function CinematicOverlay({
                 className="text-[9px] font-mono uppercase tracking-widest text-cinema-text-muted flex items-center gap-2 justify-center"
               >
                 <Command className="w-3.5 h-3.5" />
-                <span>SPEC v4 // RES 2.39:1 // HEADSET HIGHLY ENCOURAGED</span>
+                <span>SYS_KERNEL_v7 // PROTOCOL_SECURE // BIOMETRICS_ENCOURAGED</span>
               </motion.div>
             </div>
           </motion.div>

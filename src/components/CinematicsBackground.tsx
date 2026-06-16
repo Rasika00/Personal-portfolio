@@ -81,16 +81,16 @@ export default function CinematicsBackground({ activeChapter, activeProject }: B
           <img
             src={bgImage}
             alt="Cinematic Ambience"
-            className="w-full h-full object-cover filter grayscale contrast-125 brightness-75"
+            className="w-full h-full object-cover filter contrast-125 brightness-[0.85]"
             referrerPolicy="no-referrer"
           />
         </motion.div>
       </AnimatePresence>
 
       {/* Floating abstract atmospheric orbs */}
-      <div className="absolute inset-0 z-1 pointer-events-none opacity-40 mix-blend-color-dodge">
-        <div className="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] bg-cinema-gold/10 rounded-full blur-[140px] animate-pulse duration-[10000ms]" />
-        <div className="absolute bottom-[10%] right-[15%] w-[50vw] h-[50vw] bg-cinema-amber/5 rounded-full blur-[160px] animate-pulse duration-[16000ms]" />
+      <div className="absolute inset-0 z-1 pointer-events-none opacity-70 mix-blend-color-dodge">
+        <div className="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] bg-cinema-gold/40 rounded-full blur-[140px] animate-pulse duration-[10000ms]" />
+        <div className="absolute bottom-[10%] right-[15%] w-[50vw] h-[50vw] bg-cinema-amber/30 rounded-full blur-[160px] animate-pulse duration-[16000ms]" />
       </div>
 
       {/* Spotlight highlight relative to mouse coordinate */}

@@ -83,7 +83,7 @@ export default function Archive({ onInspectProject, inspectedProject }: ArchiveP
                   src={project.image}
                   alt={project.title}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover filter grayscale contrast-110 brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover filter contrast-110 brightness-90 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 {/* Visual scan frame overlay */}
                 <div className="absolute inset-x-2 top-2 flex justify-between items-center text-[8px] font-mono opacity-40 pointer-events-none">

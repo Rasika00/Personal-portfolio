@@ -18,12 +18,12 @@ export default function Vision() {
   const activities: Activity[] = [
     {
       name: "Cricket",
-      role: "Soft ball",
+      role: "Soft ball-A left handed batsman",
       image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781536154/c843fd58-a33e-46b3-98cf-3609d8ed6fc1_duaiqe.jpg",
     },
     {
       name: "Athletics",
-      role: "Track & Field",
+      role: "uva province 2019 new record / All island runner",
       events: ["100m", "200m", "Long Jump", "110 hurdles"],
       images: [
         "https://res.cloudinary.com/dpdsdpmgg/image/upload/v1781534501/Gemini_Generated_Image_np3nx7np3nx7np3n_omquyy.png",
@@ -35,17 +35,41 @@ export default function Vision() {
     },
     {
       name: "Volleyball",
-      role: "Team Captain",
-      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781538273/WhatsApp_Image_2026-06-15_at_8.45.01_PM_ldil4j.jpg",
-    }
+      role: "Libero player",
+      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781576666/copy_of_whatsapp_image_2026-06-15_at_84501_pm_ldil4j.jpg",
+    },
+    {
+      name: "elle",
+      role: "left hand player",
+      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781577533/9ff6c0ba-e45a-4ad9-8f83-45cb51075802_zd2lgo.jpg",
+    },
+    {
+      name: "wushu sanda figher",
+      role: "national champion",
+      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781580028/copy_of_88a7e16a-a44c-48c7-b210-6c2a609c36f4_wdzs4m.jpg",
+    },
+    {
+      name: "wushu tai chi , Whip",
+      role: "national Youth meet Gold medal",
+      images: [
+        "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781579542/images_1_xpt4ct.jpg",
+        "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781579542/images_gahx1o.jpg"
+      ]
+    },
+    {
+      name: "Football",
+      role: "Goal Keeper",
+      image: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781582880/14310327_600897230094517_8561703971405191187_o_q1dma6.jpg",
+    },
+
   ];
   const specs = [
     { icon: MapPin, label: "Core Coordinates", value: PERSONAL_INFO.location },
     { icon: Mail, label: "Direct Terminal", value: PERSONAL_INFO.email },
-    { icon: Cpu, label: "Architectural Focus", value: "3D Graphics, Web Shaders, Audio Engines" },
-    { icon: Layers, label: "Specialty Stack", value: "React, Framer Motion, GLSL, TS, Node" },
-    { icon: Award, label: "Aesthetic Core", value: "Cyber-Brutalist & Cinematic Minimalism" },
-    { icon: Aperture, label: "Creative Philosophy", value: "Interactive spaces should evoke a state of presence" },
+    { icon: Cpu, label: "Academic Focus", value: "Information & Communication Technology, Software Engineering" },
+    { icon: Layers, label: "Specialty Stack", value: "React, TypeScript, Node.js, Databases" },
+    { icon: Award, label: "Core Philosophy", value: "Scalability, Security & User-Centric Design" },
+    { icon: Aperture, label: "Current Objective", value: "Applying academic principles to real-world software solutions" },
   ];
 
   return (
@@ -83,7 +107,7 @@ export default function Vision() {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="text-2xl md:text-3xl font-serif text-cinema-gold font-light tracking-wide leading-relaxed italic"
           >
-            "A digital environment shouldn't just present layout blocks. It must capture focal point shadows and physical inertia."
+            "Information systems shouldn't just process data. They must bridge the gap between complex logic and human accessibility."
           </motion.h3>
 
           <motion.div
@@ -91,14 +115,14 @@ export default function Vision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            className="space-y-6 text-cinema-text-muted text-base md:text-lg font-sans font-light leading-relaxed tracking-wide"
+            className="space-y-6 text-cinema-text-muted text-base md:text-lg font-sans font-light leading-relaxed tracking-wide text-justify"
           >
             <p>{PERSONAL_INFO.philosophy}</p>
             <p>
-              By fusing raw geometric lines, monochromatic shades, and responsive momentum
-              animations, we can construct interactive worlds that hold architectural weight. Code becomes
-              a sculptural tool. Shaders control atmospheric light. Motion bridges human sensory expectations
-              with programmatic variables.
+              By combining robust backend architectures, efficient algorithms, and responsive user interfaces,
+              we can construct digital platforms that solve real-world problems. Programming becomes a tool for innovation.
+              Data structures organize complexity. Continuous learning bridges the gap between foundational academic theories
+              and cutting-edge industry standards.
             </p>
           </motion.div>
         </div>
@@ -118,12 +142,12 @@ export default function Vision() {
             <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cinema-gold/40 pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cinema-gold/40 pointer-events-none" />
 
-            <div className="relative overflow-hidden aspect-square h-full w-full bg-cinema-black">
+            <div className="relative overflow-hidden aspect-[3/4] h-full w-full bg-cinema-black">
               <img
                 src={PERSONAL_INFO.avatar}
                 alt={PERSONAL_INFO.name}
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700 ease-[0.16,1,0.3,1] scale-105 group-hover:scale-100"
+                className="w-full h-full object-cover filter contrast-125 transition-all duration-700 ease-[0.16,1,0.3,1] scale-105 group-hover:scale-100"
               />
               {/* Scanline reflection overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-cinema-black via-transparent to-transparent opacity-60 pointer-events-none" />
@@ -134,7 +158,7 @@ export default function Vision() {
 
             <div className="mt-4 text-center">
               <div className="text-xs font-display text-cinema-gold uppercase tracking-[0.25em]">{PERSONAL_INFO.name}</div>
-              <div className="text-[10px] font-mono text-cinema-text-muted mt-1 uppercase tracking-widest">Digital Director & Tech Architect</div>
+              <div className="text-[10px] font-mono text-cinema-text-muted mt-1 uppercase tracking-widest">Tech Enthusiast</div>
             </div>
           </div>
         </motion.div>
@@ -204,7 +228,7 @@ export default function Vision() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 20, opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl bg-cinema-dark border border-cinema-border/40 p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[85vh]"
+              className="relative w-full max-w-6xl bg-cinema-dark border border-cinema-border/40 p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[85vh]"
             >
               <button
                 onClick={() => setShowActivities(false)}
@@ -218,17 +242,17 @@ export default function Vision() {
               </h3>
               <div className="w-12 h-[1px] bg-cinema-gold/60 mb-8" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {activities.map((activity, idx) => (
                   <div key={idx} className={`group relative overflow-hidden border border-cinema-border/30 bg-black/40 ${activity.colSpan ? `sm:col-span-${activity.colSpan}` : ''}`}>
                     {activity.images ? (
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 aspect-[4/3] sm:aspect-[8/3]">
+                      <div className={`grid ${activity.images.length === 4 ? 'grid-cols-4' : 'grid-cols-2'} gap-1 aspect-[4/3] ${activity.colSpan === 2 ? 'sm:aspect-[8/3]' : ''}`}>
                         {activity.images.map((img, i) => (
                           <div key={i} className="overflow-hidden relative h-full w-full">
                             <img
                               src={img}
                               alt={`${activity.name} ${i + 1}`}
-                              className="w-full h-full absolute inset-0 object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
+                              className="w-full h-full absolute inset-0 object-cover filter contrast-125 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
                             />
                           </div>
                         ))}
@@ -238,7 +262,7 @@ export default function Vision() {
                         <img
                           src={activity.image}
                           alt={activity.name}
-                          className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
+                          className="w-full h-full object-cover filter contrast-125 group-hover:scale-105 transition-all duration-700 ease-[0.16,1,0.3,1]"
                         />
                       </div>
                     )}

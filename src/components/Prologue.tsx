@@ -10,25 +10,25 @@ interface PrologueProps {
 
 export default function Prologue({ onSelectChapter, audioActive, toggleAudio }: PrologueProps) {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-6 relative z-10 text-center py-20">
+    <div className="h-full flex flex-col justify-center items-center px-6 relative z-10 text-center py-4">
       {/* Cinematic Tagline / Top Indicator */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-6 flex items-center gap-3 text-xs md:text-sm font-display uppercase tracking-[0.35em] text-cinema-gold"
+        className="mb-3 flex items-center gap-3 text-xs md:text-sm font-display uppercase tracking-[0.35em] text-cinema-gold"
       >
         <span className="w-1.5 h-1.5 bg-cinema-gold rounded-full inline-block animate-pulse" />
         {PERSONAL_INFO.title}
       </motion.div>
 
       {/* Hero Movie-Style Poster Title */}
-      <div className="overflow-hidden mb-8">
+      <div className="overflow-hidden mb-4">
         <motion.h1
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif tracking-tight text-white font-light leading-none"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight text-white font-light leading-none"
         >
           {PERSONAL_INFO.name.split(" ").map((word, i) => (
             <span key={i} className="inline-block mr-4 last:mr-0 italic font-normal">
@@ -43,9 +43,9 @@ export default function Prologue({ onSelectChapter, audioActive, toggleAudio }: 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.8 }}
-        className="max-w-2xl text-cinema-text-muted text-base md:text-lg leading-relaxed font-sans font-light tracking-wide mb-12 px-4"
+        className="max-w-2xl text-cinema-text-muted text-base md:text-lg leading-relaxed font-sans font-light tracking-wide mb-6 px-4"
       >
-        {PERSONAL_INFO.tagline} {PERSONAL_INFO.philosophy.slice(0, 110)}...
+        {PERSONAL_INFO.tagline} {PERSONAL_INFO.philosophy}
       </motion.p>
 
       {/* Central Action Buttons */}
@@ -53,7 +53,7 @@ export default function Prologue({ onSelectChapter, audioActive, toggleAudio }: 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-col sm:flex-row gap-5 items-center justify-center mb-24 z-20"
+        className="flex flex-col sm:flex-row gap-5 items-center justify-center mb-8 z-20"
       >
         {/* Core CTA: Start the Cinematic Journey */}
         <button
@@ -67,15 +67,6 @@ export default function Prologue({ onSelectChapter, audioActive, toggleAudio }: 
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
         </button>
 
-        {/* Ambient Sound Trigger */}
-        <button
-          onClick={toggleAudio}
-          id="btn-toggle-audio"
-          className="px-6 py-4 border border-cinema-border hover:border-cinema-gold text-cinema-text-muted hover:text-white font-display text-xs uppercase tracking-widest bg-cinema-dark/40 backdrop-blur-sm cursor-pointer transition-all duration-500 flex items-center gap-2"
-        >
-          <Film className={`w-3.5 h-3.5 ${audioActive ? "text-cinema-gold animate-spin duration-[6000ms]" : ""}`} />
-          <span>{audioActive ? "Disable Ambient Score" : "Enable Ambient Score"}</span>
-        </button>
       </motion.div>
 
       {/* Chapters Shortcut Panel - Movie Trailer Styling */}

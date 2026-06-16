@@ -2,10 +2,10 @@ import { Project, Experience, Chapter } from "./types";
 
 export const PERSONAL_INFO = {
   name: "Rasika Priyanath",
-  title: "Undergraduate • Web Developer • Designer",
-  tagline: "Passionate about building robust, beautiful, and scalable digital experiences.",
+  title: "Undergraduate ICT Student",
+  tagline: "Passionate about building robust information systems and scalable digital experiences.",
   location: "Sri Lanka",
-  philosophy: "I am an undergraduate student driven by a deep interest in software engineering, responsive web development, and intuitive design. I believe technology should be both highly functional and aesthetically pleasing. I am constantly learning, experimenting, and applying new concepts to create digital products that are powerful, accessible, and engaging.",
+  philosophy: "I am an undergraduate Information and Communication Technology (ICT) student at Rajarata University of Sri Lanka, driven by a deep interest in software engineering, systems architecture, and modern web development. I believe technology should bridge the gap between complex data and human accessibility. I am constantly learning, experimenting, and applying new computational concepts to create solutions that are powerful, secure, and user-centric.",
   email: "rasikapriyanath62@gmail.com",
   socials: {
     github: "https://github.com",
@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
     vimeo: "https://vimeo.com",
     readcv: "https://read.cv"
   },
-  avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=600&q=80" // Sleek professional moody headshot
+  avatar: "https://res.cloudinary.com/dpdsdpmgg/image/upload/q_auto/f_auto/v1781575877/copy_of_img-20241021-wa0059_sucow9.jpg" // Sleek professional moody headshot
 };
 
 export const CHAPTERS: Chapter[] = [

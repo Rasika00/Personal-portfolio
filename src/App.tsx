@@ -210,22 +210,7 @@ export default function App() {
 
       {/* Floating Header Cinematic Nav Bar */}
       <header className="fixed top-0 left-0 w-full z-40 px-6 pt-14 pointer-events-none">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          {/* Logo Brand Title */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 cursor-pointer pointer-events-auto"
-            onClick={() => handleSelectChapter("home")}
-          >
-            <span className="font-serif italic font-semibold text-lg md:text-xl tracking-wider text-white">
-              Rasika Priyanath
-            </span>
-            <span className="h-3 w-[1px] bg-cinema-border/60 hidden sm:inline" />
-            <span className="font-display text-[9px] uppercase tracking-[0.3em] text-cinema-text-muted hidden sm:inline">
-              Portfolio v2.6
-            </span>
-          </motion.div>
+        <div className="max-w-6xl mx-auto flex items-center justify-center">
 
           {/* Floating Action Navigation menu list */}
           <motion.nav
@@ -259,7 +244,7 @@ export default function App() {
       {/* Main Render Section */}
       <div
         ref={scrollerRef}
-        className="w-full h-screen overflow-y-auto pt-[16vh] pb-[12vh] relative z-10 scroll-smooth"
+        className={`w-full h-screen pt-[16vh] pb-[12vh] relative z-10 scroll-smooth ${activeChapter === "home" ? "overflow-hidden" : "overflow-y-auto"}`}
       >
         <AnimatePresence mode="wait">
           <motion.main
